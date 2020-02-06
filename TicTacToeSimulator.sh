@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/bash -x
 echo "Welcome to TicTacToe Game! Good Luck!"	
 declare -a boardArray=(1 2 3 4 5 6 7 8 9)
+
 
 #Method to display the game board
 showBoard()
@@ -15,3 +16,17 @@ showBoard()
 	done
 }
 
+#Method to randomly assign letter X or O to player
+assignLetter()
+{
+	userLetter="O"
+	letter=$((RANDOM%2))
+	if [ $letter -eq 0 ]
+	then
+		userLetter="X"
+	else
+		userLetter="O"
+	fi
+}
+
+assignLetter
